@@ -23,7 +23,24 @@ class AdderForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-
+    $form['title'] = array(
+      '#type' => 'markup',
+      '#markup' => 'I will add the two numbers you enter.',
+    );
+    $form['num1'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Number 1'),
+      '#required' => TRUE,
+    );
+    $form['num2'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Number 2'),
+      '#required' => TRUE,
+    );
+    $form['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Submit'),
+    );
     return $form;
   }
 
