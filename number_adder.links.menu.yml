@@ -1,5 +1,5 @@
 number_adder.settings:
-  title: Number Adder Menu Link
+  title: Number Adder
   description: 'adds number adder to the main menu'
   parent: main
   route_name: number_adder.settings
