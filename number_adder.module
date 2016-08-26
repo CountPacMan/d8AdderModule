@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains number_adder.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function number_adder_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the number_adder module.
+    case 'help.page.number_adder':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds two numbers.') . '</p>';
+      return $output;
+
+    default:
+  }
+}

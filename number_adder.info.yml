@@ -1,0 +1,5 @@
+name: Number Adder
+type: module
+description: Adds two numbers.
+core: 8.x
+package: Custom
