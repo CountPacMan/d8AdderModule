@@ -82,7 +82,12 @@ class AdderForm extends FormBase {
     $response = new AjaxResponse();
     $num1 = !empty($form_state->getValue('num1')) ? $form_state->getValue('num1') : 0;
     $num2 = !empty($form_state->getValue('num2')) ? $form_state->getValue('num2') : 0;
-    $message =  "sum: " . $num1 . " + " . $num2 . " = " . ($num1 + $num2);
+    if (is_numeric($num1) && is_numeric($num2)) {
+      $message =  "sum: " . $num1 . " + " . $num2 . " = " . ($num1 + $num2);
+    }
+    else {
+      $message = "Only numbers may be added.";
+    }
     $response->addCommand(new HtmlCommand('.ajax-adder', $message));
     return $response;
   }
