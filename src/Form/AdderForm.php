@@ -47,6 +47,18 @@ class AdderForm extends FormBase {
   /**
    * {@inheritdoc}
    */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    if (!is_numeric($form_state->getValue('num1'))) {
+      $form_state->setErrorByName('num1', $this->t('Must be a number.'));
+    }
+    if (!is_numeric($form_state->getValue('num2'))) {
+      $form_state->setErrorByName('num2', $this->t('Must be a number.'));
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     drupal_set_message((int) $form_state->getValue('num1') + (int) $form_state->getValue('num2'));
   }
