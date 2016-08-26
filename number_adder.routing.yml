@@ -1,0 +1,7 @@
+number_adder.settings:
+  path: '/number_adder/adder'
+  defaults:
+    _form: '\Drupal\number_adder\Form\AdderForm'
+    _title: 'Adder'
+  requirements:
+    _permission: 'access content'
