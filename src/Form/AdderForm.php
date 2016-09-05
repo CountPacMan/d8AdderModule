@@ -92,11 +92,15 @@ class AdderForm extends FormBase {
     return $response;
   }
 
+  public function _addNumbers($num1, $num2) {
+      return $num1 + $num2;
+  }
+
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    drupal_set_message((int) $form_state->getValue('num1') + (int) $form_state->getValue('num2'));
+    drupal_set_message($this->_addNumbers((int) $form_state->getValue('num1'), (int) $form_state->getValue('num2')));
   }
 
 }
